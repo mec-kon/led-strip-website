@@ -2,29 +2,141 @@
 <html>
 
 <head>
-	<title>LED stripe</title>
-	<script type="text/javascript" src="jquery/jquery-2.0.3.min.js"></script>
+    <title>LED strip</title>
+    <script type="text/javascript" src="assets/jquery/jquery-2.0.3.min.js"></script>
 
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+
+    <!-- Scripts -->
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script type="text/javascript" src="assets/jquery/jquery.wheelcolorpicker-3.0.5.min.js"></script>
 </head>
 
 <body>
-	<div id="snippet-header" class="snippet">
-		<script type="text/javascript" src="jquery/jquery.wheelcolorpicker-3.0.5.min.js"></script>
-		<link type="text/css" rel="stylesheet" href="css/wheelcolorpicker.css" />
-	</div>
 
-	
-	<div id="snippet-block" class="snippet">
-		<p>
-			<input type="text" value="#ff8800" data-wheelcolorpicker data-wcp-layout="block" data-wcp-sliders="wv" data-wcp-cssClass="color-block" data-wcp-autoResize="true" />
-		</p>
-        <style type="text/css">
-            .color-block {
-                max-width: 215px;
-                width: 100%;
-            }
-        </style>
-	</div>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo"><strong>LED strip</strong> by mec-kon</a>
+                <ul class="icons">
+                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+                </ul>
+            </header>
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <div>
+                        <link type="text/css" rel="stylesheet" href="assets/css/wheelcolorpicker.css"/>
+                    </div>
+                    <div>
+                        <p>
+                            <input type="text" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="custom-size1" data-wcp-autoResize="false"/>
+                        </p>
+                        <style type="text/css">
+                            .custom-size1 {
+                                width: 450px;
+                                height: 400px;
+                            }
+                        </style>
+                    </div>
+                </div>
+                <div class="content">
+                    <header>
+                        <h1>one color</h1>
+                        <p>on this page you can select and activate a single color</p>
+                    </header>
+                    <p>This is a mode to select a single color and display it on the LED strip.
+                        Below you will find two buttons.
+                        Use the left button to make the LED strip light up white.
+                        Use the right button to display the previously selected color on the LED strip.</p>
+                    <ul class="actions">
+                        <li><a href="#" class="button big">activate</a></li>
+                        <li><a href="#" class="button big">set color</a></li>
+                    </ul>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Search -->
+            <section id="search" class="alt">
+                <form method="post" action="#">
+                    <input type="text" name="query" id="query" placeholder="Search"/>
+                </form>
+            </section>
+
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="generic.html">Generic</a></li>
+                    <li><a href="elements.html">Elements</a></li>
+                    <li>
+                        <span class="opener">Submenu</span>
+                        <ul>
+                            <li><a href="#">Lorem Dolor</a></li>
+                            <li><a href="#">Ipsum Adipiscing</a></li>
+                            <li><a href="#">Tempus Magna</a></li>
+                            <li><a href="#">Feugiat Veroeros</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Etiam Dolore</a></li>
+                    <li><a href="#">Adipiscing</a></li>
+                    <li>
+                        <span class="opener">Another Submenu</span>
+                        <ul>
+                            <li><a href="#">Lorem Dolor</a></li>
+                            <li><a href="#">Ipsum Adipiscing</a></li>
+                            <li><a href="#">Tempus Magna</a></li>
+                            <li><a href="#">Feugiat Veroeros</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+            <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">
+                    Design: Editorial by <a href="https://html5up.net">HTML5 UP</a>.<br>
+                    License: <a href="https://html5up.net/license">html5up license</a>.
+                </p>
+            </footer>
+
+        </div>
+    </div>
+
+</div>
+
 
 </body>
 
