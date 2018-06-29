@@ -17,7 +17,7 @@ function setColor(){
 
 function postToJson(red, green, blue) {
 
-    var url = "http://localhost:8080/colors.json";
+    var url = "http://localhost:9999/colors.json";
 
     var data = {};
     data.color_red = red;
