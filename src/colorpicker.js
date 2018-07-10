@@ -20,9 +20,9 @@ function postToJson(red, green, blue) {
     var url = "http://localhost:9999/colors.json";
 
     var data = {};
-    data.color_red = red;
-    data.color_green  = green;
-    data.color_blue = blue;
+    data.color_red = Number(red);
+    data.color_green  = Number(green);
+    data.color_blue = Number(blue);
 
     var json = JSON.stringify(data);
 
