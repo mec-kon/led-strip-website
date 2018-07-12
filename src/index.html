@@ -9,7 +9,7 @@
     <title>LED strip</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="template/css/main.css"/>
+    <link rel="stylesheet" href="template/css/main.min.css"/>
 
 
     <!-- jquery -->
@@ -46,13 +46,7 @@
             <!-- Banner -->
             <section id="banner">
                 <div class="content">
-                    <style>
-                        div.ex1 {
-                            max-width: 400px;
-                            margin: auto;
-                        }
-                    </style>
-                    <div class="ex1">
+                    <div>
                         <link type="text/css" rel="stylesheet" href="colorpicker/css/wheelcolorpicker.css"/>
 
 
@@ -60,14 +54,17 @@
                                data-wcp-sliders="wv" data-wcp-cssClass="custom-size1" data-wcp-autoResize="false"
                                id="color-input"/>
 
-                        <style type="text/css">
-                            .custom-size1 {
-                                width: auto;
-                                height: 350px;
+                        <style>
+                            div.custom-size1 {
+                                width: 90vw;
+                                height: 85vw;
 
-
+                                max-width: 450px;
+                                max-height: 425px;
+                                margin: auto;
                             }
                         </style>
+
                     </div>
                 </div>
                 <div class="content">
@@ -130,8 +127,8 @@
 <!-- template scripts -->
 <script src="template/js/browser.min.js"></script>
 <script src="template/js/breakpoints.min.js"></script>
-<script src="template/js/util.js"></script>
-<script src="template/js/main.js"></script>
+<script src="template/js/util.min.js"></script>
+<script src="template/js/main.min.js"></script>
 
 </body>
 </html>
