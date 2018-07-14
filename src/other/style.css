@@ -1,0 +1,35 @@
+.colorpicker {
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-aspect-ratio: 1/1) and (max-width: 1282px) {
+    .colorpicker {
+        width: 90vw;
+        height: 85vw;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-aspect-ratio: 1/1) and (max-width: 1282px) {
+    .colorpicker {
+        width: 37.1vw;
+        height: 35vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1282px) {
+    .colorpicker {
+        width: 26.5vw;
+        height: 25vw;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1680px) {
+    .colorpicker {
+        width: 450px;
+        height: 425px;
+    }
+}
