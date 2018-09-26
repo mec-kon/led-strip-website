@@ -2,6 +2,28 @@
 
 }
 
+.fade_div_wrapper {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.fade_color_div {
+    width: 200px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 736px) {
+    .fade_color_div {
+        width: 100%;
+        child-align: middle;
+    }
+}
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-aspect-ratio: 1/1) and (max-width: 1282px) {
     .colorpicker {
@@ -24,6 +46,8 @@
         width: 26.5vw;
         height: 25vw;
     }
+
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -32,4 +56,5 @@
         width: 450px;
         height: 425px;
     }
+
 }

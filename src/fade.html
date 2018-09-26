@@ -1,27 +1,31 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-
 <head>
     <title>LED strip</title>
-    <script type="text/javascript" src="assets/jquery/jquery-2.0.3.min.js"></script>
-
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="template/css/main.min.css"/>
 
-    <link rel="stylesheet" href="assets/css/main.css"/>
 
+    <!-- jquery -->
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
 
-    <!-- Scripts -->
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- colorpicker scripts -->
+    <script type="text/javascript" src="colorpicker/js/jquery.wheelcolorpicker-3.0.5.min.js"></script>
 
-    <script type="text/javascript" src="assets/jquery/jquery.wheelcolorpicker-3.0.5.min.js"></script>
-
+    <!-- javascript functions -->
     <script type="text/javascript" src="other/colorpicker.js"></script>
-</head>
 
-<body>
+    <link type="text/css" rel="stylesheet" href="colorpicker/css/wheelcolorpicker.css"/>
+    <link rel="stylesheet" href="other/style.css"/>
+
+</head>
+<body class="is-preload">
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -34,54 +38,78 @@
             <header id="header">
                 <a href="index.html" class="logo"><strong>LED strip</strong> by mec-kon</a>
                 <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+                    <li><a href="https://github.com/mec-kon" class="icon fa-github"><span
+                            class="label">Github</span></a></li>
+                    <li><a href="https://github.com/mec-kon/led-strip-website" class="icon fa-code"><span
+                            class="label">Github</span></a>
+                    </li>
+                    <li><a href="https://github.com/mec-kon/led-strip-website/issues" class="icon fa-bug"><span
+                            class="label">Issues</span></a></li>
                 </ul>
             </header>
 
             <!-- Banner -->
             <section id="banner">
+
                 <div class="content">
+
                     <div>
-                        <link type="text/css" rel="stylesheet" href="assets/css/wheelcolorpicker.css"/>
+                        <header>
+                            <h1>fade</h1>
+                            <p>on this page you can select up to five colors and change the colors between them</p>
+                        </header>
+                        <p>This is a mode to select a single color and display it on the LED strip.
+                            Below you will find two buttons.
+                            Use the left button to make the LED strip light up white.
+                            Use the right button to display the previously selected color on the LED strip.</p>
                     </div>
-                    <div>
-                        <p>
-                            <input type="text" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block"
-                                   data-wcp-sliders="wv" data-wcp-cssClass="custom-size1" data-wcp-autoResize="false" id="color-input"/>
-                        </p>
-                        <style type="text/css">
-                            .custom-size1 {
-                                width: 450px;
-                                height: 400px;
 
-                                max-width: 450px;
-                                max-height: 400px;
+                    <div class="fade_div_wrapper">
 
-                            }
-                        </style>
+                        <div class="fade_color_div">
+                            <input type="text" value="first color" data-wheelcolorpicker
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                            />
+                        </div>
+                        <div class="fade_color_div">
+
+                            <input type="text" value="second color" data-wheelcolorpicker
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                            />
+                        </div>
+                        <div class="fade_color_div">
+                            <input type="text" value="third color" data-wheelcolorpicker
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                            />
+                        </div>
+
+                        <div class="fade_color_div">
+                            <input type="text" value="fourth color" data-wheelcolorpicker
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                            />
+                        </div>
+                        <div class="fade_color_div">
+                            <input type="text" value="fifth color" data-wheelcolorpicker
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                            />
+                        </div>
+                        <div class="fade_color_div">
+                            <input type="text" value="sixth color" data-wheelcolorpicker
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                            />
+                        </div>
+
+                    </div>
+
+                    <div class="fade_div_wrapper">
+                        <ul class="actions">
+                            <li><a href="#" class="button big" onclick="turnOnOff()">activate</a></li>
+                            <li><a href="#" class="button big" onclick="setColor()">set color</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="content">
-                    <header>
-                        <h1>fade</h1>
-                        <p>on this page you can select and activate a single color</p>
-                    </header>
-                    <p>This is a mode to select a single color and display it on the LED strip.
-                        Below you will find two buttons.
-                        Use the left button to make the LED strip light up white.
-                        Use the right button to display the previously selected color on the LED strip.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button big" onclick="turnOnOff()">activate</a></li>
-                        <li><a href="#" class="button big" onclick="setColor()">set color</a></li>
-                    </ul>
-                </div>
             </section>
-
 
         </div>
     </div>
@@ -91,13 +119,11 @@
         <div class="inner">
 
 
-
             <!-- Menu -->
             <nav id="menu">
                 <header class="major">
                     <h2>Menu</h2>
                 </header>
-
                 <ul>
                     <li><a href="index.html">one color</a></li>
                     <li><a href="fade.html">fade</a></li>
@@ -106,8 +132,6 @@
 
                 </ul>
             </nav>
-
-
 
             <!-- Footer -->
             <footer id="footer">
@@ -128,7 +152,11 @@
 
 </div>
 
+<!-- template scripts -->
+<script src="template/js/browser.min.js"></script>
+<script src="template/js/breakpoints.min.js"></script>
+<script src="template/js/util.min.js"></script>
+<script src="template/js/main.min.js"></script>
 
 </body>
-
 </html>
