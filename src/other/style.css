@@ -2,13 +2,17 @@
 
 }
 
+.colorpicker_fade {
+    width: 15.88vw;
+    height: 15vw;
+}
+
 .fade_div_wrapper {
     padding-bottom: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 
 .fade_color_div {
     width: 200px;
@@ -19,12 +23,35 @@
 @media only screen and (max-width: 736px) {
     .fade_color_div {
         width: 100%;
-        child-align: middle;
+    }
+
+    .colorpicker_fade {
+        width: 90vw;
+        height: 85vw;
     }
 }
 
+@media only screen and (max-width: 906px) and (min-width: 737px) {
+    .colorpicker_fade {
+        width: 37.1vw;
+        height: 35vw;
+    }
+}
 
-/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 920px) and (min-width: 907px) {
+    .colorpicker_fade {
+        width: 26.47vw;
+        height: 25vw;
+    }
+}
+
+@media only screen and (min-width: 1680px) and (max-width: 1812px) {
+    .colorpicker_fade {
+        width: 21.18vw;
+        height: 20vw;
+    }
+}
+
 @media only screen and (max-aspect-ratio: 1/1) and (max-width: 1282px) {
     .colorpicker {
         width: 90vw;
@@ -32,7 +59,6 @@
     }
 }
 
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (min-aspect-ratio: 1/1) and (max-width: 1282px) {
     .colorpicker {
         width: 37.1vw;
@@ -40,21 +66,16 @@
     }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1282px) {
     .colorpicker {
         width: 26.5vw;
         height: 25vw;
     }
-
-
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1680px) {
     .colorpicker {
         width: 450px;
         height: 425px;
     }
-
 }

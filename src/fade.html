@@ -58,53 +58,64 @@
                             <h1>fade</h1>
                             <p>on this page you can select up to five colors and change the colors between them</p>
                         </header>
-                        <p>This is a mode to select a single color and display it on the LED strip.
-                            Below you will find two buttons.
-                            Use the left button to make the LED strip light up white.
-                            Use the right button to display the previously selected color on the LED strip.</p>
+                        <p>This is a mode in which one color changes over all the colors in between to another
+                            color.<br>
+                            Below you will find two buttons and an input field to enter the time duration.<br>
+                            Use the left button to power of the LED strip.
+                            Use the right button to start the fade mode.</p>
                     </div>
 
                     <div class="fade_div_wrapper">
 
                         <div class="fade_color_div">
                             <input type="text" value="first color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                                   data-wcp-autoResize="false"
                             />
                         </div>
                         <div class="fade_color_div">
 
                             <input type="text" value="second color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                                   data-wcp-autoResize="false"
                             />
                         </div>
                         <div class="fade_color_div">
                             <input type="text" value="third color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                                   data-wcp-autoResize="false"
                             />
                         </div>
 
                         <div class="fade_color_div">
                             <input type="text" value="fourth color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                                   data-wcp-autoResize="false"
                             />
                         </div>
                         <div class="fade_color_div">
                             <input type="text" value="fifth color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                                   data-wcp-autoResize="false"
                             />
                         </div>
                         <div class="fade_color_div">
                             <input type="text" value="sixth color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
+                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                                   data-wcp-autoResize="false"
                             />
                         </div>
-
                     </div>
 
                     <div class="fade_div_wrapper">
                         <ul class="actions">
-                            <li><a href="#" class="button big" onclick="turnOnOff()">activate</a></li>
-                            <li><a href="#" class="button big" onclick="setColor()">set color</a></li>
+                            <li>
+                                <div class="fade_color_div">
+                                    <input class="fade_div_wrapper" type="text" value="time"/></div>
+                            </li>
+
+                            <li><a href="#" class="button big" onclick="turnOnOff()">stop</a></li>
+                            <li><a href="#" class="button big" onclick="setColor()">start</a></li>
                         </ul>
                     </div>
                 </div>
