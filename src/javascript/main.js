@@ -1,37 +1,14 @@
 var xmlhttp = new XMLHttpRequest();
-var maxNumberOfColors = 5;
+var maxNumberOfColors = 6;
 
-function turnOnOff() {
 
-}
-
-function setColor() {
-    var colorString = $('#color-input').wheelColorPicker('getValue', 'rgb');
-
+function getColor(colorString) {
     colorString = colorString.replace("rgb(", "");
     colorString = colorString.replace(")", "");
 
     var colors = colorString.split(",");
 
-    postToJsonOneColor(colors[0], colors[1], colors[2])
-}
-
-function postToJsonOneColor(red, green, blue) {
-    var data = {};
-    var color = {};
-    color.color_red = Number(red);
-    color.color_green = Number(green);
-    color.color_blue = Number(blue);
-
-    var color_array = [];
-    color_array[0] = color;
-
-    data.color_array = color_array;
-    data.time = 0;
-    data.mode = "oneColor";
-    data.number_of_colors = 1;
-
-    postToJson(data)
+    return colors;
 }
 
 function postToJson(data) {
