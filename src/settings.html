@@ -56,27 +56,35 @@
             <!-- Banner -->
             <section id="banner">
                 <div class="content">
-                    <div>
-
-                        <input type="text" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block"
-                               data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
-                               id="color-input"/>
-
-                    </div>
-                </div>
-                <div class="content">
                     <header>
-                        <h1>one color</h1>
-                        <p>on this page you can select and activate a single color</p>
+                        <h1>settings</h1>
                     </header>
-                    <p>This is a mode to select a single color and display it on the LED strip.
-                        Below you will find two buttons.
-                        Use the left button to make the LED strip light up white.
-                        Use the right button to display the previously selected color on the LED strip.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button big" onclick="turnOnOff()">activate</a></li>
-                        <li><a href="#" class="button big" onclick="setColor()">set color</a></li>
-                    </ul>
+
+                    <div class="outer_settings_div">
+                        <div class="inner_settings_div">
+                            <h3>website port:</h3>
+                        </div>
+                        <div class="inner_settings_div">
+                            <input type="text" value="9999">
+                        </div>
+                    </div>
+                    <div class="outer_settings_div">
+                        <div class="inner_settings_div">
+                            <h3>ip address:</h3>
+                        </div>
+                        <div class="inner_settings_div">
+                            <input type="text" value="123.456.789.123">
+                        </div>
+                    </div>
+
+                    <div class="save_settings">
+                        <div class="inner_settings_div">
+                            <a href="#" class="button big" onclick="turnOnOff()">reset</a>
+                        </div>
+                        <div class="inner_settings_div">
+                            <a href="#" class="button big" onclick="turnOnOff()">save</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 

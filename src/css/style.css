@@ -14,14 +14,14 @@
     flex-wrap: wrap;
 }
 
-.fade_color_div {
+.color_input_div {
     width: 200px;
     padding-right: 10px;
     padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 736px) {
-    .fade_color_div {
+    .color_input_div {
         width: 100%;
     }
 
@@ -78,4 +78,23 @@
         width: 450px;
         height: 425px;
     }
+}
+
+.footer_div {
+    position: fixed;
+    bottom: 0;
+}
+
+.outer_settings_div {
+    display: flex;
+    flex-wrap: wrap;
+}
+.inner_settings_div{
+    width: 200px;
+    padding-left: 20px;
+}
+.save_settings {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 20px;
 }
