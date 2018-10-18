@@ -49,12 +49,7 @@ function loadJSON(callback) {
 }
 
 function loadSiteContent(url) {
-    var request = new XMLHttpRequest();
-    request.open("GET", url, true);
-    request.onload = function() {
-        if (request.readyState == 4 && request.status == "200") {
-            document.getElementById("banner").innerHTML = request.responseText;
-        }
-    };
-    request.send();
-}
+            $('#banner').load(url, function(){
+                $.getScript('colorpicker/js/jquery.wheelcolorpicker-3.0.5.min.js');
+            });          
+      }
