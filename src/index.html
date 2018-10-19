@@ -11,17 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="template/css/main.min.css"/>
 
-
-    <!-- jquery -->
-    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-
-    <!-- colorpicker scripts -->
-    <script type="text/javascript" src="colorpicker/js/jquery.wheelcolorpicker-3.0.5.min.js"></script>
-
-    <!-- javascript functions -->
-    <script type="text/javascript" src="javascript/main.js"></script>
-    <script type="text/javascript" src="javascript/one_color.js"></script>
-
     <link type="text/css" rel="stylesheet" href="colorpicker/css/wheelcolorpicker.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
@@ -55,29 +44,9 @@
 
             <!-- Banner -->
             <section id="banner">
-                <div class="content">
-                    <div>
 
-                        <input type="text" value="#ffffff" data-wheelcolorpicker data-wcp-layout="block"
-                               data-wcp-sliders="wv" data-wcp-cssClass="colorpicker" data-wcp-autoResize="false"
-                               id="color-input"/>
+                <!-- site content -->
 
-                    </div>
-                </div>
-                <div class="content">
-                    <header>
-                        <h1>one color</h1>
-                        <p>on this page you can select and activate a single color</p>
-                    </header>
-                    <p>This is a mode to select a single color and display it on the LED strip.
-                        Below you will find two buttons.
-                        Use the left button to make the LED strip light up white.
-                        Use the right button to display the previously selected color on the LED strip.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button big" onclick="turnOnOff()">activate</a></li>
-                        <li><a href="#" class="button big" onclick="setColor()">set color</a></li>
-                    </ul>
-                </div>
             </section>
 
         </div>
@@ -94,10 +63,10 @@
                     <h2>Menu</h2>
                 </header>
                 <ul>
-                    <li><a href="index.html">one color</a></li>
-                    <li><a href="fade.html">fade</a></li>
-                    <li><a href="changing_colors.html">changing colors</a></li>
-                    <li><a href="stroboscope.html">stroboscope</a></li>
+                    <li><a href="#" onclick="loadSiteContent('one_color.html')">one color</a></li>
+                    <li><a href="#" onclick="loadSiteContent('fade.html')">fade</a></li>
+                    <li><a href="#" onclick="loadSiteContent('changing_colors.html')">changing colors</a></li>
+                    <li><a href="#" onclick="loadSiteContent('stroboscope.html')">stroboscope</a></li>
 
                 </ul>
 
@@ -124,11 +93,17 @@
 
 </div>
 
+<!-- jquery -->
+<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+
 <!-- template scripts -->
 <script src="template/js/browser.min.js"></script>
 <script src="template/js/breakpoints.min.js"></script>
 <script src="template/js/util.min.js"></script>
 <script src="template/js/main.min.js"></script>
+
+<!-- javascript functions -->
+<script type="text/javascript" src="javascript/main.js"></script>
 
 </body>
 </html>

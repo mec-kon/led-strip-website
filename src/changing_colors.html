@@ -1,180 +1,70 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-<head>
-    <title>LED strip</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="template/css/main.min.css"/>
+<div class="content">
 
+    <div>
+        <header>
+            <h1>changing colors</h1>
+            <p>on this page you can select up to six colors and change between them</p>
+        </header>
+        <p>This is a mode in which each of the six selected colors will light for the selected time.<br>
+            Below you will find two buttons and an input field to enter the time duration.<br>
+            Use the left button to power of the LED strip.
+            Use the right button to start the changing color mode.</p>
+    </div>
 
-    <!-- jquery -->
-    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <div class="fade_div_wrapper">
 
-    <!-- colorpicker scripts -->
-    <script type="text/javascript" src="colorpicker/js/jquery.wheelcolorpicker-3.0.5.min.js"></script>
+        <div class="color_input_div">
+            <input type="text" value="first color" data-wheelcolorpicker
+                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                   data-wcp-autoResize="false" id="colorInputChangingColors_0"
+            />
+        </div>
+        <div class="color_input_div">
 
-    <!-- javascript functions -->
-    <script type="text/javascript" src="javascript/main.js"></script>
-    <script type="text/javascript" src="javascript/changing_colors.js"></script>
+            <input type="text" value="second color" data-wheelcolorpicker
+                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                   data-wcp-autoResize="false" id="colorInputChangingColors_1"
+            />
+        </div>
+        <div class="color_input_div">
+            <input type="text" value="third color" data-wheelcolorpicker
+                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                   data-wcp-autoResize="false" id="colorInputChangingColors_2"
+            />
+        </div>
 
-
-    <link type="text/css" rel="stylesheet" href="colorpicker/css/wheelcolorpicker.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-
-</head>
-<body class="is-preload">
-
-<!-- Wrapper -->
-<div id="wrapper">
-
-    <!-- Main -->
-    <div id="main">
-        <div class="inner">
-
-            <!-- Header -->
-            <header id="header">
-                <a href="index.html" class="logo"><strong>LED strip</strong> by mec-kon</a>
-                <ul class="icons">
-                    <li><a href="https://github.com/mec-kon" class="icon fa-github"><span
-                            class="label">Github</span></a></li>
-                    <li><a href="https://github.com/mec-kon/led-strip-website" class="icon fa-code"><span
-                            class="label">Github</span></a>
-                    </li>
-                    <li><a href="https://github.com/mec-kon/led-strip-website/issues" class="icon fa-bug"><span
-                            class="label">Issues</span></a></li>
-                    <li></li>
-                    <li><a href="settings.html" class="icon fa-ellipsis-v"><span
-                            class="label">Settings</span></a></li>
-                </ul>
-
-            </header>
-
-            <!-- Banner -->
-            <section id="banner">
-
-                <div class="content">
-
-                    <div>
-                        <header>
-                            <h1>changing colors</h1>
-                            <p>on this page you can select up to six colors and change between them</p>
-                        </header>
-                        <p>This is a mode in which each of the six selected colors will light for the selected time.<br>
-                            Below you will find two buttons and an input field to enter the time duration.<br>
-                            Use the left button to power of the LED strip.
-                            Use the right button to start the changing color mode.</p>
-                    </div>
-
-                    <div class="fade_div_wrapper">
-
-                        <div class="color_input_div">
-                            <input type="text" value="first color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
-                                   data-wcp-autoResize="false" id="colorInputChangingColors_0"
-                            />
-                        </div>
-                        <div class="color_input_div">
-
-                            <input type="text" value="second color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
-                                   data-wcp-autoResize="false" id="colorInputChangingColors_1"
-                            />
-                        </div>
-                        <div class="color_input_div">
-                            <input type="text" value="third color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
-                                   data-wcp-autoResize="false" id="colorInputChangingColors_2"
-                            />
-                        </div>
-
-                        <div class="color_input_div">
-                            <input type="text" value="fourth color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
-                                   data-wcp-autoResize="false" id="colorInputChangingColors_3"
-                            />
-                        </div>
-                        <div class="color_input_div">
-                            <input type="text" value="fifth color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
-                                   data-wcp-autoResize="false" id="colorInputChangingColors_4"
-                            />
-                        </div>
-                        <div class="color_input_div">
-                            <input type="text" value="sixth color" data-wheelcolorpicker
-                                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
-                                   data-wcp-autoResize="false" id="colorInputChangingColors_5"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="fade_div_wrapper">
-                        <ul class="actions">
-                            <li>
-                                <div class="color_input_div">
-                                    <input class="fade_div_wrapper" type="text" value="time" onfocus="this.value=''"
-                                           id="timeChangingColors"/></div>
-                            </li>
-
-                            <li><a href="#" class="button big" onclick="turnOnOff()">stop</a></li>
-                            <li><a href="#" class="button big" onclick="setColorsAndTimeChangingColors()">start</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </section>
-
+        <div class="color_input_div">
+            <input type="text" value="fourth color" data-wheelcolorpicker
+                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                   data-wcp-autoResize="false" id="colorInputChangingColors_3"
+            />
+        </div>
+        <div class="color_input_div">
+            <input type="text" value="fifth color" data-wheelcolorpicker
+                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                   data-wcp-autoResize="false" id="colorInputChangingColors_4"
+            />
+        </div>
+        <div class="color_input_div">
+            <input type="text" value="sixth color" data-wheelcolorpicker
+                   data-wcp-sliders="wv" data-wcp-cssClass="colorpicker_fade"
+                   data-wcp-autoResize="false" id="colorInputChangingColors_5"
+            />
         </div>
     </div>
 
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <div class="inner">
+    <div class="fade_div_wrapper">
+        <ul class="actions">
+            <li>
+                <div class="color_input_div">
+                    <input class="fade_div_wrapper" type="text" value="time" onfocus="this.value=''"
+                           id="timeChangingColors"/></div>
+            </li>
 
-
-            <!-- Menu -->
-            <nav id="menu">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="index.html">one color</a></li>
-                    <li><a href="fade.html">fade</a></li>
-                    <li><a href="changing_colors.html">changing colors</a></li>
-                    <li><a href="stroboscope.html">stroboscope</a></li>
-
-                </ul>
-
-                <!-- Footer -->
-                <div class="footer_div">
-                    <footer id="footer">
-                        <p class="copyright">
-                            Design: Editorial by <a href="https://html5up.net">HTML5 UP</a>.<br>
-                            License: <a href="https://html5up.net/license">html5up license</a>.</p>
-                        <p class="copyright">
-                            Special thanks to <a href="https://github.com/fujaru">Fajar Chandra</a><br> for his great <a
-                                href="https://github.com/fujaru/jquery-wheelcolorpicker">colorpicker</a>.<br>
-                            License: <a href="https://github.com/fujaru/jquery-wheelcolorpicker/blob/master/LICENSE">
-                            jquery-wheelcolorpicker license</a>
-
-                        </p>
-                    </footer>
-                </div>
-            </nav>
-        </div>
+            <li><a href="#" class="button big" onclick="turnOnOff()">stop</a></li>
+            <li><a href="#" class="button big" onclick="setColorsAndTimeChangingColors()">start</a></li>
+        </ul>
     </div>
-
 </div>
 
-<!-- template scripts -->
-<script src="template/js/browser.min.js"></script>
-<script src="template/js/breakpoints.min.js"></script>
-<script src="template/js/util.min.js"></script>
-<script src="template/js/main.min.js"></script>
-
-</body>
-</html>
+</section>
