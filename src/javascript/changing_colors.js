@@ -1,6 +1,6 @@
 function setColorsAndTimeChangingColors() {
-    var data = {};
-    var color_array = [];
+    let data = {};
+    let color_array = [];
 
     for (let i = 0; i < maxNumberOfColors; i++) {
         var color = {};
@@ -16,5 +16,5 @@ function setColorsAndTimeChangingColors() {
     data.mode = "changingColors";
     data.number_of_colors = maxNumberOfColors;
     data.time = Number(document.getElementById('timeChangingColors').value);
-    postToJson(data);
+    postToJson(data, "colors.json");
 }
