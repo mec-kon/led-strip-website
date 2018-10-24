@@ -20,19 +20,19 @@ function getColor(colorString) {
     return colors;
 }
 
-function postToJson(data) {
+function postToJson(data, filename) {
     let request = new XMLHttpRequest();
-    let url = "http://" + config["devices"][0]["ipAddress"] + ":" + config["devices"][0]["port"] +"/colors.json";
+    let url = "http://" + config["devices"][0]["ipAddress"] + ":" + config["devices"][0]["port"] +"/" + filename;
     let json = JSON.stringify(data);
 
     request.open("POST", url, true);
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     request.onload = function () {
-        var data = JSON.parse(request.responseText);
+        let response = JSON.parse(request.responseText);
         if (request.readyState == 4 && request.status == "201") {
-            console.table(data);
+            console.table(response);
         } else {
-            console.error(data);
+            console.error(response);
         }
     }
     request.send(json);

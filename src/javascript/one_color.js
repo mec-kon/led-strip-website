@@ -3,10 +3,10 @@ function turnOnOff() {
 }
 
 function setColor() {
-    var data = {};
-    var color = {};
-    var colorString = $('#color-input').wheelColorPicker('getValue', 'rgb');
-    var colorAsStringArray =  getColor(colorString);
+    let data = {};
+    let color = {};
+    let colorString = $('#colorpickerOnecolor').wheelColorPicker('getValue', 'rgb');
+    let colorAsStringArray =  getColor(colorString);
 
     color.color_red = Number(colorAsStringArray[0]);
     color.color_green = Number(colorAsStringArray[1]);
@@ -20,5 +20,5 @@ function setColor() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data)
+    postToJson(data, "colors.json")
 }
