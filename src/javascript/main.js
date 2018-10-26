@@ -1,6 +1,7 @@
 var config;
 var current_mode;
 
+let request = new XMLHttpRequest();
 
 loadSiteContent('one_color.html');
 
@@ -21,14 +22,13 @@ function getColor(colorString) {
 }
 
 function postToJson(data, filename) {
-    let request = new XMLHttpRequest();
     let url = "http://" + config["devices"][0]["ipAddress"] + ":" + config["devices"][0]["port"] +"/" + filename;
     let json = JSON.stringify(data);
 
     request.open("POST", url, true);
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     request.onload = function () {
-        let response = JSON.parse(request.responseText);
+        let response = request.responseText;
         if (request.readyState == 4 && request.status == "201") {
             console.table(response);
         } else {
@@ -36,13 +36,10 @@ function postToJson(data, filename) {
         }
     }
     request.send(json);
-    console.log(url);
 }
 
 
 function loadJSON(url, callback) {
-
-    let request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.onload = function () {
         if (request.readyState == 4 && request.status == "200") {
