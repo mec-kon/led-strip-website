@@ -3,9 +3,9 @@ function setColorsAndTimeFade() {
     let color_array = [];
 
     for (let i = 0; i < maxNumberOfColors; i++) {
-        var color = {};
-        var colorString = $('#colorInputFade_' + i).wheelColorPicker('getValue', 'rgb');
-        var colorAsStringArray =  getColor(colorString);
+        let color = {};
+        let colorString = $('#colorInputFade_' + i).wheelColorPicker('getValue', 'rgb');
+        let colorAsStringArray =  getColor(colorString);
         color.color_red = Number(colorAsStringArray[0]);
         color.color_green = Number(colorAsStringArray[1]);
         color.color_blue = Number(colorAsStringArray[2]);

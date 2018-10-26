@@ -12,7 +12,7 @@ function setColor() {
     color.color_green = Number(colorAsStringArray[1]);
     color.color_blue = Number(colorAsStringArray[2]);
 
-    var color_array = [];
+    let color_array = [];
     color_array[0] = color;
 
     data.color_array = color_array;

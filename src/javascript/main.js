@@ -1,5 +1,5 @@
-var config;
-var current_mode;
+let config;
+let current_mode;
 
 let request = new XMLHttpRequest();
 
@@ -16,9 +16,7 @@ function getColor(colorString) {
     colorString = colorString.replace("rgb(", "");
     colorString = colorString.replace(")", "");
 
-    let colors = colorString.split(",");
-
-    return colors;
+    return colorString.split(",");
 }
 
 function postToJson(data, filename) {
@@ -34,7 +32,7 @@ function postToJson(data, filename) {
         } else {
             console.error(response);
         }
-    }
+    };
     request.send(json);
 }
 
