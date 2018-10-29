@@ -1,6 +1,7 @@
 function setColorsAndTimeChangingColors() {
     let data = {};
     let color_array = [];
+    let numberOfColors = 0;
 
     for (let i = 0; i < maxNumberOfColors; i++) {
         let color = {};
@@ -10,11 +11,14 @@ function setColorsAndTimeChangingColors() {
         color.color_green = Number(colorAsStringArray[1]);
         color.color_blue = Number(colorAsStringArray[2]);
 
-        color_array[i] = color;
+        if(color.color_red != 0 || color.color_green != 0 || color.color_blue != 0 ){
+            color_array[i] = color;
+            numberOfColors++;
+        }
     }
     data.color_array = color_array;
     data.mode = "changingColors";
-    data.number_of_colors = maxNumberOfColors;
+    data.number_of_colors = numberOfColors;
     data.time = Number(document.getElementById('timeChangingColors').value);
     postToJson(data, "colors.json");
 }

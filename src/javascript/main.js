@@ -26,11 +26,8 @@ function postToJson(data, filename) {
     request.open("POST", url, true);
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     request.onload = function () {
-        let response = request.responseText;
-        if (request.readyState == 4 && request.status == "201") {
-            console.table(response);
-        } else {
-            console.error(response);
+        if (!request.readyState == 4 || !request.status == "200") {
+            console.error("posting error");
         }
     };
     request.send(json);
