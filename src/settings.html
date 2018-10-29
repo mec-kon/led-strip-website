@@ -1,11 +1,11 @@
 <div class="content">
     <header>
-        <h1>settings</h1>
+        <h1>device settings</h1>
     </header>
 
     <div class="outer_settings_div">
         <div class="inner_settings_div">
-            <h3>website port:</h3>
+            <h3>device port:</h3>
         </div>
         <div class="inner_settings_div">
             <input id="portSettings" type="text" value="" onfocus="this.value=''">
@@ -29,3 +29,29 @@
         </div>
     </div>
 </div>
+
+<div class="content">
+    <header>
+        <h1>website settings</h1>
+    </header>
+
+    <div class="outer_settings_div">
+        <div class="inner_settings_div">
+            <h3>website port:</h3>
+        </div>
+        <div class="inner_settings_div">
+            <input id="serverPortSettings" type="text" value="" onfocus="this.value=''">
+        </div>
+    </div>
+
+
+    <div class="save_settings">
+        <div class="inner_settings_div">
+            <a href="#" class="button big" onclick="turnOnOff()">reset</a>
+        </div>
+        <div class="inner_settings_div">
+            <a href="#" class="button big" onclick="saveSettings()">save</a>
+        </div>
+    </div>
+</div>
+

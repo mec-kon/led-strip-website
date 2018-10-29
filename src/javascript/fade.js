@@ -11,8 +11,8 @@ function setColorsAndTimeFade() {
         color.color_green = Number(colorAsStringArray[1]);
         color.color_blue = Number(colorAsStringArray[2]);
 
-        if(color.color_red != 0 || color.color_green != 0 || color.color_blue != 0 ){
-            color_array[i] = color;
+        if(color.color_red != 255 || color.color_green != 255 || color.color_blue != 255 ){
+            color_array[numberOfColors] = color;
             numberOfColors++;
         }
     }
