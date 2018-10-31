@@ -1,5 +1,7 @@
 let deviceConfig;
+let websiteConfig;
 let current_mode;
+let stripLights = false;
 
 let request = new XMLHttpRequest();
 
@@ -8,6 +10,11 @@ loadSiteContent('one_color.html');
 loadJSON('deviceConfig.json', function(response) {
     // Parse JSON string into object
     deviceConfig = response;
+});
+
+loadJSON('websiteConfig.json', function(response) {
+    // Parse JSON string into object
+    websiteConfig = response;
 });
 
 let maxNumberOfColors = 6;
@@ -24,9 +31,9 @@ function postToJson(data, filename) {
     let json = JSON.stringify(data);
 
     request.open("POST", url, true);
-    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    request.setRequestHeader("Content-type", "application/json; charset=utf-8");
     request.onload = function () {
-        if (!request.readyState == 4 || !request.status == "200") {
+        if (4 === !request.readyState || 200 === !request.status) {
             console.error("posting error");
         }
     };
@@ -35,9 +42,9 @@ function postToJson(data, filename) {
 
 
 function loadJSON(url, callback) {
-    request.open('GET', url, true);
+    request.open("GET", url, true);
     request.onload = function () {
-        if (request.readyState == 4 && request.status == "200") {
+        if (4 === request.readyState  && 200 === request.status) {
             callback(JSON.parse(request.responseText));
         }
     };
@@ -46,23 +53,23 @@ function loadJSON(url, callback) {
 
 function loadSiteContent(url) {
 
-    if(current_mode != url){
-        $('#banner').load(url, function(){
-            $.getScript('colorpicker/js/jquery.wheelcolorpicker-3.0.5.min.js');
-            if(url == "one_color.html"){
-                $.getScript('javascript/one_color.js');
+    if(current_mode !== url){
+        $("#banner").load(url, function(){
+            $.getScript("colorpicker/js/jquery.wheelcolorpicker-3.0.5.min.js");
+            if(url === "one_color.html"){
+                $.getScript("javascript/one_color.js");
             }
-            else if (url == "fade.html"){
-                $.getScript('javascript/fade.js');
+            else if (url === "fade.html"){
+                $.getScript("javascript/fade.js");
             }
-            else if (url == "changing_colors.html"){
-                $.getScript('javascript/changing_colors.js');
+            else if (url === "changing_colors.html"){
+                $.getScript("javascript/changing_colors.js");
             }
-            else if (url == "stroboscope.html"){
-                $.getScript('javascript/stroboscope.js');
+            else if (url === "stroboscope.html"){
+                $.getScript("javascript/stroboscope.js");
             }
             else{
-                $.getScript('javascript/settings.js');
+                $.getScript("javascript/settings.js");
             }
         });
         current_mode = url

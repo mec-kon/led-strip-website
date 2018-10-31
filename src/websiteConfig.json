@@ -1,0 +1,4 @@
+{
+  "_comment": "this is only a dummy file, the real file is saved in the led-strip-server folder",
+  "port": 9999
+}
