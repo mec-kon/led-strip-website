@@ -15,14 +15,43 @@ Three different modes are currently available.
 of the LED strip moves.
 * The changing colors mode switches between all selected colors.
 
+Demo
+--------
+
+Try out a demo [here](https://mec-kon.github.io/led-strip-website/src/)
+
+
 Download and install
 --------
 
+### Raspberry Pi
 The easiest way to run the website is to use my self-programmed [server](https://github.com/mec-kon/led-strip-server), 
 as it not only hosts the website, but also controls the Led Band.
 This project is already included in my [server](https://github.com/mec-kon/led-strip-server) project as submodule.
 
 [Check out my led-strip-server on github](https://github.com/mec-kon/led-strip-server)
+
+### Espressif ESP32
+If you want to control your LED strip with an ESP32, you still need a Raspberry Pi to host the website.
+You can do this as described above with my self-programmed server.
+
+(The ESP32 server is currently under development)
+
+[Check out my led-strip-server-esp32 on github](https://github.com/mec-kon/led-strip-server-esp32)
+
+
+Configuration
+--------
+You can set the port of the web page as well as the port and ip address 
+of the device to which the led strip is connected.
+
+You can do both on the website under settings.
+By default, the ip address is localhost and the port is 9999.
+
+Protocol
+--------
+Currently the data is transferred from the web page to the led strip with a http post as a json file.
+Later a transmission via the mqtt protocol should also be possible.
 
 
 Credits
