@@ -8,8 +8,8 @@ function deviceSaveSettings() {
 
     //deep copy
     let data = jQuery.extend(true, {}, deviceConfig);
-    data["devices"][0]["port"] = document.getElementById('portSettings').value;
-    data["devices"][0]["ipAddress"] = document.getElementById('addressSettings').value;
+    data["devices"][0]["port"] = document.getElementById('devicePortSettings').value;
+    data["devices"][0]["ipAddress"] = document.getElementById('deviceAddressSettings').value;
 
     postToJson(data, "deviceConfig.json");
 }
@@ -23,6 +23,8 @@ function websiteSaveSettings() {
     //deep copy
     let data = jQuery.extend(true, {}, websiteConfig);
     data["port"] = Number(document.getElementById('websitePortSettings').value);
+
+    postToJson(data, "websiteConfig.json");
 }
 
 function websiteResetSettingsField() {
