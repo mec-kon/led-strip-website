@@ -26,7 +26,6 @@ function getColor(colorString) {
 }
 
 function postToJson(data, filename) {
-    /*
     let request = new XMLHttpRequest();
     let url = "http://" + deviceConfig["devices"][0]["ipAddress"] + ":" + deviceConfig["devices"][0]["port"] +"/" + filename;
     let json = JSON.stringify(data);
@@ -39,7 +38,6 @@ function postToJson(data, filename) {
         }
     };
     request.send(json);
-    */
 }
 
 
