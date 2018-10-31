@@ -78,7 +78,6 @@ function loadSiteContent(url) {
 }
 
 function turnOFF() {
-    document.getElementById("onOffOneColor").innerHTML = "activate";
     stripLights = false;
 
     let data = {};
@@ -99,7 +98,6 @@ function turnOFF() {
 }
 
 function turnON() {
-    document.getElementById("onOffOneColor").innerHTML = "deactivate";
     stripLights = true;
 
     let data = {};
