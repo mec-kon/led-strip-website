@@ -8,9 +8,11 @@ else {
 
 function turnOnOff() {
     if (stripLights) {
+        document.getElementById("onOffOneColor").innerHTML = "activate";
         turnOFF();
     }
     else {
+        document.getElementById("onOffOneColor").innerHTML = "deactivate";
         turnON();
     }
 }
