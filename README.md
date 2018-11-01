@@ -72,4 +72,8 @@ Licences:
 * [gnu license]([https://github.com/mec-kon/led-strip-website/blob/master/GNU-LICENSE)
 * [mit license](https://github.com/mec-kon/led-strip-website/blob/master/MIT-LICENSE)
 
-#Pull requests are always welcome
+
+Pull requests
+--------
+
+Pull requests are always welcome !
