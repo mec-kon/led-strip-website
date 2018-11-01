@@ -1,7 +1,7 @@
 led-strip-website
 ====================================
 
-This is a website that allows you to control a Led strip connected to a Raspberry Pi or ESP32 microcontroller.
+This is a website that allows you to control a led strip connected to a Raspberry Pi or ESP32 microcontroller.
 
 ![](demo/led_strip_website.png)
 
@@ -18,7 +18,7 @@ of the LED strip moves.
 Demo
 --------
 
-Try out a demo [here](https://mec-kon.github.io/led-strip-website/src/)
+Try out a demo <a href="https://mec-kon.github.io/led-strip-website/src/" target="blank">here</a>
 
 
 Download and install
@@ -32,7 +32,7 @@ This project is already included in my [server](https://github.com/mec-kon/led-s
 [Check out my led-strip-server on github](https://github.com/mec-kon/led-strip-server)
 
 ### Espressif ESP32
-If you want to control your LED strip with an ESP32, you still need a Raspberry Pi to host the website.
+If you want to control your LED strip with an ESP32, you still need a server to host the website.
 You can do this as described above with my self-programmed server.
 
 (The ESP32 server is currently under development)
@@ -47,6 +47,9 @@ of the device to which the led strip is connected.
 
 You can do both on the website under settings.
 By default, the ip address is localhost and the port is 9999.
+
+The device configuration is saved in the deviceConfig.json file, 
+the configuration of the website is stored on the server that hosts the website.
 
 Protocol
 --------
@@ -66,5 +69,7 @@ Licences:
 
 * [colorpicker](https://github.com/fujaru/jquery-wheelcolorpicker/blob/master/LICENSE)
 * [html5up](https://html5up.net/license)
-* [gnu license]([https://github.com/mec-kon/led-strip-website/blob/experimental/GNU-LICENSE)
-* [mit license](https://github.com/mec-kon/led-strip-website/blob/experimental/MIT-LICENSE)
+* [gnu license]([https://github.com/mec-kon/led-strip-website/blob/master/GNU-LICENSE)
+* [mit license](https://github.com/mec-kon/led-strip-website/blob/master/MIT-LICENSE)
+
+#Pull requests are always welcome
