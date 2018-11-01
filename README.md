@@ -18,7 +18,7 @@ of the LED strip moves.
 Demo
 --------
 
-Try out a demo <a href="https://mec-kon.github.io/led-strip-website/src/" target="blank">here</a>
+Try out a demo <a href="https://mec-kon.github.io/led-strip-website/src/" target="_blank">here</a>
 
 
 Download and install
