@@ -11,8 +11,7 @@ Modes
 
 Three different modes are currently available.
 * The one color mode allows you to select a simple color.
-* The fade mode can be used to select several colors between which the color 
-of the LED strip moves.
+* The fade mode can be used to smoothly transition inbetween several selected colors. of the LED strip moves.
 * The changing colors mode switches between all selected colors.
 
 Demo
@@ -69,7 +68,7 @@ Licences:
 
 * [colorpicker](https://github.com/fujaru/jquery-wheelcolorpicker/blob/master/LICENSE)
 * [html5up](https://html5up.net/license)
-* [gnu license]([https://github.com/mec-kon/led-strip-website/blob/master/GNU-LICENSE)
+* [gnu license](https://github.com/mec-kon/led-strip-website/blob/master/GNU-LICENSE)
 * [mit license](https://github.com/mec-kon/led-strip-website/blob/master/MIT-LICENSE)
 
 
