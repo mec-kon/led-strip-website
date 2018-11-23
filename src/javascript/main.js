@@ -26,18 +26,22 @@ function getColor(colorString) {
 }
 
 function postToJson(data, filename) {
-    let request = new XMLHttpRequest();
     let url = "http://" + deviceConfig["devices"][0]["ipAddress"] + ":" + deviceConfig["devices"][0]["port"] +"/" + filename;
     let json = JSON.stringify(data);
 
-    request.open("POST", url, true);
-    request.setRequestHeader("Content-type", "application/json; charset=utf-8");
-    request.onload = function () {
-        if (4 === !request.readyState || 200 === !request.status) {
-            console.error("posting error");
+    let request = $.ajax({
+        type: 'POST',
+        url: url,
+        data : json,
+        dataType: "json",
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: false
         }
-    };
-    request.send(json);
+    });
+    request.done(function(data){
+        console.log(data);
+    });
 }
 
 

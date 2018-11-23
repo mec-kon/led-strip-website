@@ -1,4 +1,6 @@
 function setColorsAndTimeFade() {
+    stripLights = true;
+
     let data = {};
     let color_array = [];
     let numberOfColors = 0;
