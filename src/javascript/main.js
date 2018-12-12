@@ -34,6 +34,7 @@ function postToJson(data, filename) {
         url: url,
         data : json,
         dataType: "json",
+        contentType: "application/json",
         crossDomain: true,
         xhrFields: {
             withCredentials: false
