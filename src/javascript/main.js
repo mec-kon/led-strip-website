@@ -6,12 +6,12 @@ let stripLights = false;
 
 loadSiteContent('one_color.html');
 
-loadJSON('deviceConfig.json', function(response) {
+$.getJSON('deviceConfig.json', function(response){
     // Parse JSON string into object
     deviceConfig = response;
 });
 
-loadJSON('websiteConfig.json', function(response) {
+$.getJSON('websiteConfig.json', function(response){
     // Parse JSON string into object
     websiteConfig = response;
 });
@@ -25,8 +25,8 @@ function getColor(colorString) {
     return colorString.split(",");
 }
 
-function postToJson(data, filename) {
-    let url = "http://" + deviceConfig["devices"][0]["ipAddress"] + ":" + deviceConfig["devices"][0]["port"] +"/" + filename;
+function postToJson(data, filename, ipAddress, port) {
+    let url = "http://" + ipAddress + ":" + port +"/" + filename;
     let json = JSON.stringify(data);
 
     let request = $.ajax({
@@ -46,16 +46,6 @@ function postToJson(data, filename) {
 }
 
 
-function loadJSON(url, callback) {
-    let request = new XMLHttpRequest();
-    request.open("GET", url, true);
-    request.onload = function () {
-        if (4 === request.readyState  && 200 === request.status) {
-            callback(JSON.parse(request.responseText));
-        }
-    };
-    request.send(null);
-}
 
 function loadSiteContent(url) {
 
@@ -99,7 +89,7 @@ function turnOFF() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json");
+    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
 }
 
 function turnON() {
@@ -119,5 +109,5 @@ function turnON() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json");
+    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
 }

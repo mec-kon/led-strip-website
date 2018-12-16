@@ -38,5 +38,5 @@ function setColor() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json");
+    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
 }

@@ -22,5 +22,5 @@ function setColorsAndTimeChangingColors() {
     data.mode = "changingColors";
     data.number_of_colors = numberOfColors;
     data.time = Number(document.getElementById('timeChangingColors').value);
-    postToJson(data, "colors.json");
+    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
 }

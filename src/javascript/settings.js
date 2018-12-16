@@ -11,7 +11,7 @@ function deviceSaveSettings() {
     data["devices"][0]["port"] = document.getElementById('devicePortSettings').value;
     data["devices"][0]["ipAddress"] = document.getElementById('deviceAddressSettings').value;
 
-    postToJson(data, "deviceConfig.json");
+    postToJson(data, "deviceConfig.json", location.hostname, location.port);
 }
 
 function deviceResetSettingsField() {
@@ -24,7 +24,7 @@ function websiteSaveSettings() {
     let data = jQuery.extend(true, {}, websiteConfig);
     data["port"] = Number(document.getElementById('websitePortSettings').value);
 
-    postToJson(data, "websiteConfig.json");
+    postToJson(data, "websiteConfig.json", location.hostname, location.port);
 }
 
 function websiteResetSettingsField() {
