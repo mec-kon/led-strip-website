@@ -3,6 +3,11 @@ document.getElementById("deviceAddressSettings").value = deviceConfig["devices"]
 
 document.getElementById("websitePortSettings").value = websiteConfig["port"];
 
+function loadDevices() {
+    for(let i=0; i<1; i++) {
+        
+    }
+}
 
 function deviceSaveSettings() {
 
