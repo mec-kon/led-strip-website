@@ -9,6 +9,7 @@ loadSiteContent('one_color.html');
 $.getJSON('deviceConfig.json', function(response){
     // Parse JSON string into object
     deviceConfig = response;
+    generateDeviceCheckboxes(deviceConfig['devices'])
 });
 
 $.getJSON('websiteConfig.json', function(response){
@@ -110,4 +111,50 @@ function turnON() {
     data.number_of_colors = 1;
 
     postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+}
+
+function makeCheckboxList(array) {
+    // Create list element
+    let list = document.createElement('ul');
+
+    for(let i = 0; i < array.length; i++) {
+        let id = "device_" + i;
+        // Create list item
+        let container = document.createElement('li');
+
+        let checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        checkbox.id = id;
+        checkbox.value = i;
+       
+
+        let label = document.createElement('label')
+        label.htmlFor = id;
+        label.onclick = "checkboxChange(checkbox)"
+        label.appendChild(document.createTextNode(array[i]['name']));
+
+        container.appendChild(checkbox);
+        container.appendChild(label);
+
+        // Add container to the list
+        list.appendChild(container);
+    }
+
+    // Return constructed list
+    return list;
+}
+//To do: Add eventhandler to the CheckboxList 
+
+function generateDeviceCheckboxes(devices) {
+    document.getElementById('deviceList').appendChild(makeCheckboxList(devices));
+    checkboxListener();
+    console.log(selectedDevices)
+}
+
+// To do: post data to all selected devices
+function post() {
+    for(let i = 0; i < deviceConfig['devices'].length; i++){
+        postToJson(data, "colors.json", deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);
+    }
+    
 }
