@@ -1,13 +1,53 @@
-document.getElementById("deviceNameSettings").value = deviceConfig["devices"][0]["name"];
-document.getElementById("devicePortSettings").value = deviceConfig["devices"][0]["port"];
-document.getElementById("deviceAddressSettings").value = deviceConfig["devices"][0]["ipAddress"];
-
+//document.getElementById("deviceNameSettings").value = deviceConfig["devices"][0]["name"];
+//document.getElementById("devicePortSettings").value = deviceConfig["devices"][0]["port"];
+//document.getElementById("deviceAddressSettings").value = deviceConfig["devices"][0]["ipAddress"];
+loadDevices();
 document.getElementById("websitePortSettings").value = websiteConfig["port"];
 
 function loadDevices() {
-    for(let i=0; i<1; i++) {
-        
+    let devices = document.getElementById("devicesDiv");
+    let htmlCode = "";
+    for(let i=0; i<3; i++) {
+        htmlCode += "\n" +
+            "    \n" +
+            "\n" +
+            "    <h2>device " +i +":</h2>\n" +
+            "    \n" +
+            "    <div class=\"outer_settings_div\">\n" +
+            "        <div class=\"inner_settings_div\">\n" +
+            "            <h3>device name:</h3>\n" +
+            "        </div>\n" +
+            "        <div class=\"inner_settings_div\">\n" +
+            "            <label for=\"deviceNameSettings\">\n" +
+            "                <input id=\"deviceNameSettings\" type=\"text\" value=\"\" onfocus=\"this.value=''\">\n" +
+            "            </label>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "    \n" +
+            "    <div class=\"outer_settings_div\">\n" +
+            "        <div class=\"inner_settings_div\">\n" +
+            "            <h3>device port:</h3>\n" +
+            "        </div>\n" +
+            "        <div class=\"inner_settings_div\">\n" +
+            "            <label for=\"devicePortSettings\">\n" +
+            "                <input id=\"devicePortSettings\" type=\"text\" value=\"\" onfocus=\"this.value=''\">\n" +
+            "            </label>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "    <div class=\"outer_settings_div\">\n" +
+            "        <div class=\"inner_settings_div\">\n" +
+            "            <h3>ip address:</h3>\n" +
+            "        </div>\n" +
+            "        <div class=\"inner_settings_div\">\n" +
+            "            <label for=\"deviceAddressSettings\">\n" +
+            "                <input type=\"text\" id=\"deviceAddressSettings\" value=\"\" onfocus=\"this.value=''\">\n" +
+            "            </label>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "\n" +
+            "    ";
     }
+    devices.innerHTML = htmlCode;
 }
 
 function deviceSaveSettings() {
