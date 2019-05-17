@@ -1,3 +1,4 @@
+document.getElementById("deviceNameSettings").value = deviceConfig["devices"][0]["name"];
 document.getElementById("devicePortSettings").value = deviceConfig["devices"][0]["port"];
 document.getElementById("deviceAddressSettings").value = deviceConfig["devices"][0]["ipAddress"];
 
@@ -13,6 +14,7 @@ function deviceSaveSettings() {
 
     //deep copy
     let data = jQuery.extend(true, {}, deviceConfig);
+    data["devices"][0]["name"] = document.getElementById('deviceNameSettings').value;
     data["devices"][0]["port"] = document.getElementById('devicePortSettings').value;
     data["devices"][0]["ipAddress"] = document.getElementById('deviceAddressSettings').value;
 
@@ -20,6 +22,7 @@ function deviceSaveSettings() {
 }
 
 function deviceResetSettingsField() {
+    document.getElementById("deviceNameSettings").value = deviceConfig["devices"][0]["name"];
     document.getElementById("devicePortSettings").value = deviceConfig["devices"][0]["port"];
     document.getElementById("deviceAddressSettings").value = deviceConfig["devices"][0]["ipAddress"];
 }
