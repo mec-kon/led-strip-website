@@ -15,6 +15,9 @@ $.getJSON('deviceConfig.json', function(response){
 $.getJSON('websiteConfig.json', function(response){
     // Parse JSON string into object
     websiteConfig = response;
+    if(websiteConfig["port"] === ""){
+        websiteConfig["port"] = location.port;
+    }
 });
 
 let maxNumberOfColors = 6;
@@ -127,12 +130,12 @@ function makeCheckboxList(array) {
         let checkbox = document.createElement('input');
         checkbox.type = "checkbox";
         checkbox.id = id;
-        checkbox.value = i;
+        checkbox.value = i.toString();
        
 
-        let label = document.createElement('label')
+        let label = document.createElement('label');
         label.htmlFor = id;
-        label.onclick = "checkboxChange(checkbox)"
+        label.onclick = "checkboxChange(checkbox)";
         label.appendChild(document.createTextNode(array[i]['name']));
 
         container.appendChild(checkbox);
@@ -153,13 +156,7 @@ function generateDeviceCheckboxes(devices) {
 function postToSelected(data, filename) {
     for(let i = 0; i < deviceConfig['devices'].length; i++){
         if(document.getElementById('device_' + i).checked){
-            console.log(i)
             postToJson(data, filename, deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);   
         }
     }  
-}
-
-function postToAll(data, filename) {
-    for(let i = 0; i < deviceConfig['devices'].length; i++)
-        postToJson(data, filename, deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);
 }
