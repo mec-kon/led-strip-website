@@ -90,7 +90,8 @@ function turnOFF() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    //postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    postToSelected(data, "colors.json")
 }
 
 function turnON() {
@@ -110,7 +111,8 @@ function turnON() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    //postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    postToSelected(data, "colors.json")
 }
 
 function makeCheckboxList(array) {
@@ -143,18 +145,21 @@ function makeCheckboxList(array) {
     // Return constructed list
     return list;
 }
-//To do: Add eventhandler to the CheckboxList 
 
 function generateDeviceCheckboxes(devices) {
     document.getElementById('deviceList').appendChild(makeCheckboxList(devices));
-    checkboxListener();
-    console.log(selectedDevices)
 }
 
-// To do: post data to all selected devices
-function post() {
+function postToSelected(data, filename) {
     for(let i = 0; i < deviceConfig['devices'].length; i++){
-        postToJson(data, "colors.json", deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);
-    }
-    
+        if(document.getElementById('device_' + i).checked){
+            console.log(i)
+            postToJson(data, filename, deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);   
+        }
+    }  
+}
+
+function postToAll(data, filename) {
+    for(let i = 0; i < deviceConfig['devices'].length; i++)
+        postToJson(data, filename, deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);
 }
