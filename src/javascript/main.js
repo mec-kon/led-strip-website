@@ -10,6 +10,7 @@ $.getJSON('deviceConfig.json', function(response){
     // Parse JSON string into object
     deviceConfig = response;
     generateDeviceCheckboxes(deviceConfig['devices'])
+    initializeServerIp();
 });
 
 $.getJSON('websiteConfig.json', function(response){
@@ -21,6 +22,13 @@ $.getJSON('websiteConfig.json', function(response){
 });
 
 let maxNumberOfColors = 6;
+
+function initializeServerIp(){
+    if(deviceConfig["devices"][0]["ipAddress"] == "autoIP"){
+        deviceConfig["devices"][0]["ipAddress"] = location.hostname;
+        postToJson(deviceConfig, "deviceConfig.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    }
+}
 
 function getColor(colorString) {
     colorString = colorString.replace("rgb(", "");

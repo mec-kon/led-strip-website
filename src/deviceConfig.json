@@ -2,7 +2,7 @@
   "devices": [
     {
       "name": "Raspberry Pi",
-      "ipAddress": "localhost",
+      "ipAddress": "autoIP",
       "port": "9999"
     },
     {
