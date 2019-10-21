@@ -25,7 +25,7 @@ Download and install
 
 ### Raspberry Pi
 The easiest way to run the website is to use my self-programmed [server](https://github.com/mec-kon/led-strip-server), 
-as it not only hosts the website, but also controls the Led Band.
+as it not only hosts the website, but also controls the LED strip.
 This project is already included in my [server](https://github.com/mec-kon/led-strip-server) project as submodule.
 
 [Check out my led-strip-server on github](https://github.com/mec-kon/led-strip-server)
@@ -45,7 +45,9 @@ You can set the port of the web page as well as the port and ip address
 of the device to which the led strip is connected.
 
 You can do both on the website under settings.
-By default, the ip address is localhost and the port is 9999.
+
+By default, the ip address of the first device is set to the address of the server hosting the website.
+This happens as long as the variable "ipAddress" in the deviceConfig.json file has the value "autoIP".
 
 The device configuration is saved in the deviceConfig.json file, 
 the configuration of the website is stored on the server that hosts the website.
