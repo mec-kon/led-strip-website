@@ -9,14 +9,26 @@ loadSiteContent('one_color.html');
 $.getJSON('deviceConfig.json', function(response){
     // Parse JSON string into object
     deviceConfig = response;
+    generateDeviceCheckboxes(deviceConfig['devices'])
+    initializeServerIp();
 });
 
 $.getJSON('websiteConfig.json', function(response){
     // Parse JSON string into object
     websiteConfig = response;
+    if(websiteConfig["port"] === ""){
+        websiteConfig["port"] = location.port;
+    }
 });
 
 let maxNumberOfColors = 6;
+
+function initializeServerIp(){
+    if(deviceConfig["devices"][0]["ipAddress"] == "autoIP"){
+        deviceConfig["devices"][0]["ipAddress"] = location.hostname;
+        postToJson(deviceConfig, "deviceConfig.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    }
+}
 
 function getColor(colorString) {
     colorString = colorString.replace("rgb(", "");
@@ -89,7 +101,8 @@ function turnOFF() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    //postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    postToSelected(data, "colors.json")
 }
 
 function turnON() {
@@ -109,5 +122,49 @@ function turnON() {
     data.mode = "oneColor";
     data.number_of_colors = 1;
 
-    postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    //postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    postToSelected(data, "colors.json")
+}
+
+function makeCheckboxList(array) {
+    // Create list element
+    let list = document.createElement('ul');
+
+    for(let i = 0; i < array.length; i++) {
+        let id = "device_" + i;
+        // Create list item
+        let container = document.createElement('li');
+
+        let checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        checkbox.id = id;
+        checkbox.value = i.toString();
+       
+
+        let label = document.createElement('label');
+        label.htmlFor = id;
+        label.onclick = "checkboxChange(checkbox)";
+        label.appendChild(document.createTextNode(array[i]['name']));
+
+        container.appendChild(checkbox);
+        container.appendChild(label);
+
+        // Add container to the list
+        list.appendChild(container);
+    }
+
+    // Return constructed list
+    return list;
+}
+
+function generateDeviceCheckboxes(devices) {
+    document.getElementById('deviceList').appendChild(makeCheckboxList(devices));
+}
+
+function postToSelected(data, filename) {
+    for(let i = 0; i < deviceConfig['devices'].length; i++){
+        if(document.getElementById('device_' + i).checked){
+            postToJson(data, filename, deviceConfig["devices"][i]["ipAddress"], deviceConfig["devices"][i]["port"]);   
+        }
+    }  
 }

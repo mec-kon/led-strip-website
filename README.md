@@ -25,18 +25,21 @@ Download and install
 
 ### Raspberry Pi
 The easiest way to run the website is to use my self-programmed [server](https://github.com/mec-kon/led-strip-server), 
-as it not only hosts the website, but also controls the Led Band.
+as it not only hosts the website, but also controls the LED strip.
 This project is already included in my [server](https://github.com/mec-kon/led-strip-server) project as submodule.
 
 [Check out my led-strip-server on github](https://github.com/mec-kon/led-strip-server)
 
-### Espressif ESP32
-If you want to control your LED strip with an ESP32, you still need a server to host the website.
+### Espressif ESP32|ESP8266
+If you want to control your LED strip with an ESP32|ESP8266, you still need a server to host the website.
 You can do this as described above with my self-programmed server.
 
-(The ESP32 server is currently under development)
+(The ESP32 and ESP8266 servers are currently under development)
 
 [Check out my led-strip-server-esp32 on github](https://github.com/mec-kon/led-strip-server-esp32)
+
+[Check out my led-strip-server-esp8266 on github](https://github.com/mec-kon/led-strip-server-esp8266)
+
 
 
 Configuration
@@ -45,7 +48,9 @@ You can set the port of the web page as well as the port and ip address
 of the device to which the led strip is connected.
 
 You can do both on the website under settings.
-By default, the ip address is localhost and the port is 9999.
+
+By default, the ip address of the first device is set to the address of the server hosting the website.
+This happens as long as the variable "ipAddress" in the deviceConfig.json file has the value "autoIP".
 
 The device configuration is saved in the deviceConfig.json file, 
 the configuration of the website is stored on the server that hosts the website.
