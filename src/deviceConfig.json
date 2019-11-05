@@ -1,8 +1,14 @@
 {
   "devices": [
     {
-      "ipAddress": "localhost",
+      "name": "Raspberry Pi",
+      "ipAddress": "autoIP",
       "port": "9999"
+    },
+    {
+      "name": "ESP32",
+      "ipAddress": "localhost",
+      "port": "9991"
     }
   ]
 }

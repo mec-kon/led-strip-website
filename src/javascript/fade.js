@@ -1,4 +1,6 @@
 function setColorsAndTimeFade() {
+    stripLights = true;
+
     let data = {};
     let color_array = [];
     let numberOfColors = 0;
@@ -20,5 +22,6 @@ function setColorsAndTimeFade() {
     data.mode = "fade";
     data.number_of_colors = numberOfColors;
     data.time = Number(document.getElementById('timeFade').value);
-    postToJson(data, "colors.json");
+    //postToJson(data, "colors.json", deviceConfig["devices"][0]["ipAddress"], deviceConfig["devices"][0]["port"]);
+    postToSelected(data, "colors.json")
 }

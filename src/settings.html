@@ -3,30 +3,17 @@
         <h1>device settings</h1>
     </header>
 
-    <div class="outer_settings_div">
-        <div class="inner_settings_div">
-            <h3>device port:</h3>
-        </div>
-        <div class="inner_settings_div">
-            <label for="devicePortSettings">
-                <input id="devicePortSettings" type="text" value="" onfocus="this.value=''">
-            </label>
-        </div>
-    </div>
-    <div class="outer_settings_div">
-        <div class="inner_settings_div">
-            <h3>ip address:</h3>
-        </div>
-        <div class="inner_settings_div">
-            <label for="deviceAddressSettings">
-                <input type="text" id="deviceAddressSettings" value="" onfocus="this.value=''">
-            </label>
-        </div>
+
+    <div id="devicesDiv">
+
     </div>
 
     <div class="save_settings">
         <div class="inner_settings_div">
-            <a href="#" class="button big" onclick="deviceResetSettingsField()">reset</a>
+            <a href="#" class="button big" onclick="deviceResetSettings()">reset</a>
+        </div>
+        <div class="inner_settings_div">
+            <a href="#" class="button big" onclick="deviceAddDevice()">add device</a>
         </div>
         <div class="inner_settings_div">
             <a href="#" class="button big" onclick="deviceSaveSettings()">save</a>
